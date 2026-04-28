@@ -1,3 +1,6 @@
 package com.gympro.gymprobackend.entity;
 
-public enum ERole { ADMIN, RECEPTIONIST };
+public enum ERole {
+    ROLE_USER,
+    ROLE_ADMIN
+};
