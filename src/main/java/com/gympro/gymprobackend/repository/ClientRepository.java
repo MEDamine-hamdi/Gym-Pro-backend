@@ -13,4 +13,6 @@ public interface ClientRepository extends JpaRepository<Client, Long>{
     // ClientOfferRepository.java — monthly revenue
     @Query(value = "SELECT DATE_FORMAT(co.start_date, '%Y-%m') as month, SUM(o.price) as revenue FROM client_offers co JOIN offers o ON co.offer_id=o.id WHERE co.paid=1 GROUP BY month ORDER BY month", nativeQuery = true)
     List<Object[]> monthlyRevenue();
+
+    long countByActiveTrue();
 }

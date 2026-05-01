@@ -1,9 +1,10 @@
 package com.gympro.gymprobackend.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-
+@Getter
+@Setter
 @Data
 @Entity
 @Table(name = "offers")
