@@ -33,7 +33,7 @@ public class RoomService {
         roomExisting.setName(room.getName());
         roomExisting.setCapacity(room.getCapacity());
         roomExisting.setEquipment(room.getEquipment());
-        roomExisting.setActive(room.isActive() != null ? room.isActive() : true);
+        roomExisting.setActive(room.getActive() != null ? room.getActive() : true);
         return roomRepository.save(roomExisting);
     }
 

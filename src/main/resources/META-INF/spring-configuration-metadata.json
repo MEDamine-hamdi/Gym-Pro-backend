@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "app",
+      "type": "com.gympro.gymprobackend.config.AppProperties",
+      "sourceType": "com.gympro.gymprobackend.config.AppProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.dev-mode",
+      "type": "java.lang.Boolean",
+      "description": "Enable development mode - permits all requests without authentication",
+      "defaultValue": false
+    }
+  ],
+  "hints": []
+}
