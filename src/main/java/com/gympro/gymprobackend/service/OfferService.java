@@ -23,7 +23,7 @@ public class OfferService {
         return offerRepository.save(offer);
     }
 
-    public Offer updateOffer(Offer offer,Long id){
+    public Offer updateOffer(Long id,Offer offer){
         Offer existing=getOfferById(id);
 
         existing.setName(offer.getName());
