@@ -11,8 +11,9 @@ import java.util.List;
 @Service
 public class StatsService {
     @Autowired
-
     private BookingRepository bookingRepository;
+
+    @Autowired
     private ClientRepository clientRepository;
 
     public List<Object[]> peakBookingHours() {

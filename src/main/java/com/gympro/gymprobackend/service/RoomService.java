@@ -18,6 +18,11 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
+    public Room getRoomById(Long id) {
+        return roomRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Room not found with id: " + id));
+    }
+
     public Room createRoom(Room room){
         return roomRepository.save(room);
     }
@@ -28,7 +33,7 @@ public class RoomService {
         roomExisting.setName(room.getName());
         roomExisting.setCapacity(room.getCapacity());
         roomExisting.setEquipment(room.getEquipment());
-        roomExisting.setActive(room.getActive());
+        roomExisting.setActive(room.isActive() != null ? room.isActive() : true);
         return roomRepository.save(roomExisting);
     }
 

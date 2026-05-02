@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "employees")
+@Table(name = "client_offers")
 public class ClientOffer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
