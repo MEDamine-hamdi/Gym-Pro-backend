@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/booking")
+@RequestMapping("/api/offers")
 public class OfferController {
     @Autowired OfferService offerService;
 

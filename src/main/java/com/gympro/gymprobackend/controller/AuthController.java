@@ -89,9 +89,16 @@ public class AuthController {
                     .orElseThrow(() -> new RuntimeException("Role not found")));
         } else {
             registerRequest.getRoles().forEach(role -> {
-                ERole eRole = role.equals("admin") ? ERole.ROLE_ADMIN : ERole.ROLE_USER;
+                ERole eRole;
+                if (role.equalsIgnoreCase("admin")) {
+                    eRole = ERole.ROLE_ADMIN;
+                } else if (role.equalsIgnoreCase("receptionist")) {
+                    eRole = ERole.ROLE_RECEPTIONIST;
+                } else {
+                    eRole = ERole.ROLE_USER;
+                }
                 roles.add(roleRepository.findByName(eRole)
-                        .orElseThrow());
+                        .orElseThrow(() -> new RuntimeException("Role not found: " + role)));
             });
         }
 
